@@ -9,6 +9,7 @@ def home_view(request):
     random_article_id = random.randrange(1,last_article.id+1)
     article_obj = Article.objects.get(id=random_article_id)
     article_qs = Article.objects.all()
+    print(id)
     content  = {
         "title": article_obj.title,
         "content": article_obj.content,
