@@ -3,4 +3,11 @@
     <h1>{{title}} - Title <br></h1>
     <p>{{content}} - Content</p>
     <p>{{id}} - id</p>
-{% endblock content %}
+<ul>
+    {% for x in article_qs %}
+        {% if x.title %}
+            <li><a href="/articles/{{ x.id }}/">{{ x.title }} -- {{ x.content }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock content %}s
